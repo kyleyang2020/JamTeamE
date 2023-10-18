@@ -24,12 +24,13 @@ public class Health : MonoBehaviour
         // is player is hurt
         if (currentHealth > 0)
         {
-            
+            //SoundManager.instance.PlaySound(hurtSound);
         }
         // if player is dead
         else
         {
-            
+            //SoundManager.instance.PlaySound(deathSound);
+            //SceneManager.LoadScene("End");
         }
     }
 }
