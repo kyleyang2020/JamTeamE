@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image totalHealthbar;
     [SerializeField] private Image currentHealthbar;
 
+    // Start is called before the first frame update
     void Start()
     {
         // set total health to current health

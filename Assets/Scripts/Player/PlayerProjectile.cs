@@ -9,6 +9,7 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] private float speed; // speed of projectile
     [SerializeField] public int damage; // damage of projectile
 
+    // Update is called once per frame
     void Update()
     {
         // moves the bullet fowards depending on speed

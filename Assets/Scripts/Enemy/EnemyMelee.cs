@@ -9,8 +9,6 @@ public class EnemyMelee : MonoBehaviour
     [SerializeField] private float damage; // damage of the enemy
     Transform player; // reference of player for the enemy to move towards player
 
-    public int health;
-
     // Start is called before the first frame update
     void Start()
     {

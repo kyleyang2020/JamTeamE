@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     // variables for starting and current health
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
+    [SerializeField] private bool isPlayer;
 
     // assigning variables, setting current health
     private void Awake()
@@ -21,17 +22,24 @@ public class Health : MonoBehaviour
         // remove health equal to damage
         currentHealth -= _damage;
 
-        // is player is hurt
-        if (currentHealth > 0)
+        // if player is hurt
+        if (isPlayer & currentHealth > 0)
         {
-            // singleton baby
-            //SoundManager.instance.PlaySound(hurtSound);
+
         }
         // if player is dead
-        else
+        else if(isPlayer & currentHealth <= 0)
         {
-            //SoundManager.instance.PlaySound(deathSound);
-            //SceneManager.LoadScene("End");
+            SceneManager.LoadScene("GameOver");
+        }
+        // if enemy is hurt
+        else if(currentHealth > 0)
+        {
+
+        }
+        // if enemy is dead
+        else if(currentHealth <= 0)
+        {
             Destroy(gameObject);
         }
     }

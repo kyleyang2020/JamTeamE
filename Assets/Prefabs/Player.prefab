@@ -62,7 +62,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6452452542504634333}
-  - {fileID: 4574895418542188343}
   m_Father: {fileID: 8956773518146237857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.402}
 --- !u!212 &3055008186017179013
@@ -146,7 +145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6374637073173110295}
+  m_Father: {fileID: 8956773518146237857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6134654972827489049
 GameObject:
@@ -184,6 +183,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6374637073173110295}
+  - {fileID: 4574895418542188343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7351761969191829983
@@ -358,3 +358,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  isPlayer: 1

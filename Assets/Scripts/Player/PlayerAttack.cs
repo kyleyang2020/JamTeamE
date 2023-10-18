@@ -53,7 +53,9 @@ public class PlayerAttack : MonoBehaviour
         // MELEE
         if (Input.GetMouseButtonDown(1)) // right click
         {
+            // looks for all things with enemy layer inside circle
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, allEnemies);
+            // do damage to everything inside the circle
             for (int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<Health>().TakeDamage(meleeDamage);
@@ -62,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    // draws the attack range in the work scene 
+    // draws the attack range in the work scene  
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
