@@ -12,13 +12,14 @@ public class Healthbar : MonoBehaviour
     void Start()
     {
         // set total health to current health
+        // able to get currentHealth because of currentHealth { get; private set; } in health script
         totalHealthbar.fillAmount = playerHealth.currentHealth / 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // refreshing current health
+        // refreshing current health every frame
         currentHealthbar.fillAmount = playerHealth.currentHealth / 10;
     }
 }

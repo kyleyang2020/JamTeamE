@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyMelee : MonoBehaviour
 {
     [SerializeField] private float speed; // speed of the enemy
+    [SerializeField] private float damage; // damage of the enemy
     Transform player; // reference of player for the enemy to move towards player
 
     public int health;
@@ -13,8 +14,8 @@ public class EnemyMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // actually finds transform component
-        player = FindObjectOfType<PlayerController>().transform; 
+        // actually finds transform component of the player so move towards their location
+        player = FindObjectOfType<PlayerMovement>().transform; 
     }
 
     // Update is called once per frame
@@ -26,22 +27,8 @@ public class EnemyMelee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Projectile")
-        {
-            TakeDamage(collision.GetComponent<Projectile>().damage);
-        }
+        // if the enemy touches a player, player take damage
         if (collision.tag == "Player")
-        {
-            SceneManager.LoadScene("TestScene");
-        }
-    }
-
-    void TakeDamage(int damage)
-    {
-        health -= damage;
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
+            collision.GetComponent<Health>().TakeDamage(damage);
     }
 }

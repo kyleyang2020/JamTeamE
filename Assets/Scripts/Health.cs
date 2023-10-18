@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
         // is player is hurt
         if (currentHealth > 0)
         {
+            // singleton baby
             //SoundManager.instance.PlaySound(hurtSound);
         }
         // if player is dead
@@ -31,6 +32,7 @@ public class Health : MonoBehaviour
         {
             //SoundManager.instance.PlaySound(deathSound);
             //SceneManager.LoadScene("End");
+            Destroy(gameObject);
         }
     }
 }

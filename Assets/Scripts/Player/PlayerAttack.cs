@@ -10,7 +10,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform firePoint; // where the projectile would spawn
     [SerializeField] private GameObject bullet; // actual bullet to spawn/shoot
 
-    [SerializeField] private float atkCD; // cd for player bullets
+    [SerializeField] private Transform meleePoint; // where the melee attack starts
+    [SerializeField] private float meleeRange; // range of said melee attack
+    public LayerMask allEnemies; // everything thats an enemy
+    public float meleeDamage; // melee damage
+
+    [SerializeField] private float atkCD; // cd for player bullets/melee
     float atkCDTimer; // to count the time that has passed
 
     // Start is called before the first frame update
@@ -40,13 +45,27 @@ public class PlayerAttack : MonoBehaviour
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
                 // spawns the bullet , at the firepoint position and at that rotation
                 // following the parameters of the instantiate function
+                
+                // set damage on bullet script
             }
         }
 
         // MELEE
         if (Input.GetMouseButtonDown(1)) // right click
         {
-            
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(meleePoint.position, meleeRange, allEnemies);
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<Health>().TakeDamage(meleeDamage);
+                Debug.Log("hit");
+            }
         }
+    }
+
+    // draws the attack range in the work scene 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(meleePoint.position, meleeRange);
     }
 }
