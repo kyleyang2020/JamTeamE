@@ -6,10 +6,11 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Transform weapon; // transform so that the weapon aims with the cursor
     private float offset; // to readjust/realign weapon with mouse
-
+    private bool facingRight; //whether or not the player is aiming to the right
     [SerializeField] private Transform firePoint; // where the projectile would spawn
     [SerializeField] private GameObject bullet; // actual bullet to spawn/shoot
-
+    [SerializeField] private SpriteRenderer gunSprite; //the gun's sprite
+    [SerializeField] private SpriteRenderer playerSprite; //the player's sprite
     [SerializeField] private Transform meleePoint; // where the melee attack starts
     [SerializeField] private float meleeRange; // range of said melee attack
     public LayerMask allEnemies; // everything thats an enemy
@@ -33,6 +34,12 @@ public class PlayerAttack : MonoBehaviour
         Vector3 displacement = weapon.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // get angle and convert it from radians to degrees
         float angle = Mathf.Atan2(displacement.y, displacement.x) * Mathf.Rad2Deg;
+        
+        //logic so the player and gun are facing the right way if you're aiming to the right of them
+        facingRight = Mathf.Abs(angle) < 90;
+        gunSprite.flipX = facingRight;
+        playerSprite.flipX = facingRight;
+
         // finally do the rotation + offset since center was point at mouse before
         weapon.rotation = Quaternion.Euler(0, 0, angle + offset);
 
