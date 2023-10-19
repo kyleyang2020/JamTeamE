@@ -8,6 +8,12 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] private float damage; // damage of the enemy
     Transform player; // reference of player for the enemy to move towards player
 
+    [SerializeField] private Transform firePoint; // where the projectile would spawn
+    [SerializeField] private GameObject bullet; // actual bullet to spawn/shoot
+
+    [SerializeField] private float atkCD; // cd for attack
+    float atkCDTimer; // to count the time that has passed
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +26,15 @@ public class EnemyRanged : MonoBehaviour
     {
         // move towards player position, at certain speed
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
+        Vector2 direction = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
+        transform.up = direction;
+
+        if (Time.time > atkCDTimer) // if enough time has passed for cd to be up
+        {
+            atkCDTimer = Time.time + atkCD; // increment the time up by the CD to be check with in-game time later
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
