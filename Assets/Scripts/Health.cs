@@ -40,6 +40,7 @@ public class Health : MonoBehaviour
         // if enemy is dead
         else if(currentHealth <= 0)
         {
+            ScoreScript.scoreCount++;
             Destroy(gameObject);
         }
     }

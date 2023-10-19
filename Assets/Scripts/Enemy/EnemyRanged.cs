@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class EnemyMelee : MonoBehaviour
+public class EnemyRanged : MonoBehaviour
 {
     [SerializeField] private float speed; // speed of the enemy
     [SerializeField] private float damage; // damage of the enemy
@@ -13,7 +12,7 @@ public class EnemyMelee : MonoBehaviour
     void Start()
     {
         // actually finds transform component of the player so move towards their location
-        player = FindObjectOfType<PlayerMovement>().transform; 
+        player = FindObjectOfType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
@@ -34,6 +33,5 @@ public class EnemyMelee : MonoBehaviour
             collision.GetComponent<Health>().TakeDamage(damage);
             Destroy(gameObject);
         }
-
     }
 }
