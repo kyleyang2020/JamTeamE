@@ -272,14 +272,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134654972827489049}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -290,7 +290,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5753464809488976881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f7b09e2a3bb9e459fe3e5b8fd6f952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 1000
 --- !u!114 &5052526534419195610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +322,8 @@ MonoBehaviour:
   gunSprite: {fileID: 7275374952179208296}
   playerSprite: {fileID: 3655457010908271518}
   meleePoint: {fileID: 4574895418542188343}
-  meleeRange: 0
+
+  meleeRange: 2
   allEnemies:
     serializedVersion: 2
     m_Bits: 64
