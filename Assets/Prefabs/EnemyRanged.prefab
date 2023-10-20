@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3644294054755559685}
   - component: {fileID: 3555224124359609991}
   - component: {fileID: 8950998973164072628}
-  - component: {fileID: 1212786490295150940}
+  - component: {fileID: 4662752444083803981}
   m_Layer: 6
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -256,7 +256,7 @@ MonoBehaviour:
   firePoint: {fileID: 5395118716620712052}
   bullet: {fileID: 8088078555620636314, guid: 52e183727f3df6746a802c73cbb59630, type: 3}
   atkCD: 1
---- !u!95 &1212786490295150940
+--- !u!95 &4662752444083803981
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
