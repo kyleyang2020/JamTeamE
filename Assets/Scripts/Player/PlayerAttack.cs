@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask allEnemies; // everything thats an enemy
     public float meleeDamage; // melee damage
 
+    [SerializeField] private AudioClip gunSound; 
+
     [SerializeField] private float atkCD; // cd for player bullets/melee
     float atkCDTimer; // to count the time that has passed
 
@@ -48,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Time.time > atkCDTimer) // if enough time has passed for cd to be up
             {
+                SoundManager.instance.PlaySound(gunSound);
                 atkCDTimer = Time.time + atkCD; // increment the time up by the CD to be check with in-game time later
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
                 // spawns the bullet , at the firepoint position and at that rotation
