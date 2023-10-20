@@ -6,10 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed; // for the speed of the character
     private Animator animator;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
@@ -26,6 +28,6 @@ public class PlayerMovement : MonoBehaviour
         }
         // moves player, normalized to fix speed when moving diagonally
         // Time.deltaTime to make movement framerate dependent
-        transform.position += playerInput.normalized * speed * Time.deltaTime;
+        rb.velocity = playerInput.normalized * speed * Time.deltaTime;
     }
 }
