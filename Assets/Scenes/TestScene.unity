@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
-  isPlayer: 0
+  isPlayer: 1
 --- !u!50 &245562341
 Rigidbody2D:
   serializedVersion: 4
@@ -1814,7 +1814,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b66a4db608d1a744688fd96ec75dd95e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
