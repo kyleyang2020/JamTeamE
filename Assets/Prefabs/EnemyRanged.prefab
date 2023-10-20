@@ -276,4 +276,4 @@ MonoBehaviour:
   damage: 1
   firePoint: {fileID: 5395118716620712052}
   bullet: {fileID: 8088078555620636314, guid: 52e183727f3df6746a802c73cbb59630, type: 3}
-  atkCD: 1
+  atkCD: 2

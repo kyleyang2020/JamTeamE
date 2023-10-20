@@ -14,8 +14,9 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         if(Time.time > spawnCDTimer)
-        { 
+        {
             spawnCDTimer = Time.time + spawnCD;
+            // spawn enemy randomly at any of the children points
             Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(enemy, randomSpawnPoint.position, Quaternion.identity);
         }
