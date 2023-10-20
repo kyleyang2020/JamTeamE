@@ -28,6 +28,6 @@ public class PlayerMovement : MonoBehaviour
         }
         // moves player, normalized to fix speed when moving diagonally
         // Time.deltaTime to make movement framerate dependent
-        rb.velocity = playerInput.normalized * speed * Time.deltaTime;
+        rb.velocity = playerInput.normalized * speed;
     }
 }

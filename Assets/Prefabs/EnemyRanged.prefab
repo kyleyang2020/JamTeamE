@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 506439977920697912}
   - component: {fileID: 3825913837713250752}
   - component: {fileID: 3644294054755559685}
+  - component: {fileID: 4662752444083803981}
   - component: {fileID: 3555224124359609991}
   - component: {fileID: 8950998973164072628}
-  - component: {fileID: 4662752444083803981}
   m_Layer: 6
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -225,6 +225,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &4662752444083803981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7849233554024092056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b3422ff628c717409b33f0938e2e3af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3555224124359609991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,24 +277,3 @@ MonoBehaviour:
   firePoint: {fileID: 5395118716620712052}
   bullet: {fileID: 8088078555620636314, guid: 52e183727f3df6746a802c73cbb59630, type: 3}
   atkCD: 1
---- !u!95 &4662752444083803981
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7849233554024092056}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b3422ff628c717409b33f0938e2e3af, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

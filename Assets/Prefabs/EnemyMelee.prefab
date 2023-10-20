@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1183988564231000091}
   - component: {fileID: 8466913331187507814}
   - component: {fileID: -6791822586906801721}
-  - component: {fileID: 4791791006173380239}
   - component: {fileID: 3583270687976114560}
+  - component: {fileID: 4791791006173380239}
   m_Layer: 6
   m_Name: EnemyMelee
   m_TagString: Enemy
@@ -160,20 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4791791006173380239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069009548020296513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0320a6bc7d695144b791bab2cedd3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  damage: 1
 --- !u!114 &3583270687976114560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +174,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   isPlayer: 0
+--- !u!114 &4791791006173380239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069009548020296513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0320a6bc7d695144b791bab2cedd3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  damage: 1
