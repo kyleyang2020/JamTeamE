@@ -6,7 +6,7 @@ public class EnemyProjectile : MonoBehaviour
 {
     [SerializeField] private float speed; // speed of projectile
     [SerializeField] public int damage; // damage of projectile
-    [SerializeField] private float destroyTime; // time when the bullets disappear for enemy
+    //[SerializeField] private float destroyTime; // time when the bullets disappear for enemy
 
     // Update is called once per frame
     void Update()
@@ -15,10 +15,12 @@ public class EnemyProjectile : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
 
         // if time has passed destroyTime destroy the said bullet
+        /*
         if (Time.time > destroyTime)
         {
             Destroy(gameObject);
         }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
