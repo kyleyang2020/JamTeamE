@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private Transform weapon; // transform so that the weapon aims with the cursor
-    private float offset; // to readjust/realign weapon with mouse
-    private bool facingRight; //whether or not the player is aiming to the right
+    [Header("Gun")]
+    [SerializeField] private Transform gunObject; // transform so that the weapon aims with the cursor
     [SerializeField] private Transform firePoint; // where the projectile would spawn
     [SerializeField] private GameObject bullet; // actual bullet to spawn/shoot
-    [SerializeField] private SpriteRenderer gunSprite; //the gun's sprite
-    [SerializeField] private SpriteRenderer playerSprite; //the player's sprite
+
+    [Header("Animations")]
+    [SerializeField] private SpriteRenderer gunSprite; // the gun's sprite to flip with aim
+    [SerializeField] private SpriteRenderer playerSprite; // the player's sprite to flip with aim
+    [SerializeField] private AudioClip gunSound; // sound of gun fire
+    private bool facingRight; //whether or not the player is aiming to the right
+    private float offset; // to readjust/realign weapon with mouse
+
+    [Header("AOE Melee")]
     [SerializeField] private Transform meleePoint; // where the melee attack starts
     [SerializeField] private float meleeRange; // range of said melee attack
     public LayerMask allEnemies; // everything thats an enemy
     public float meleeDamage; // melee damage
 
-    [SerializeField] private AudioClip gunSound; 
-
+    [Header("Attack CD")]
     [SerializeField] private float atkCD; // cd for player bullets/melee
     float atkCDTimer; // to count the time that has passed
 
@@ -33,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
         // WEAPON ROTATION with mouse
         // returns space between the weapon and mouse cursor 
         // screentoworldpoint is to convert mouseposition units from pixels to coordinates
-        Vector3 displacement = weapon.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 displacement = gunObject.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // get angle and convert it from radians to degrees
         float angle = Mathf.Atan2(displacement.y, displacement.x) * Mathf.Rad2Deg;
         
@@ -43,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
         playerSprite.flipX = facingRight;
 
         // finally do the rotation + offset since center was point at mouse before
-        weapon.rotation = Quaternion.Euler(0, 0, angle + offset);
+        gunObject.rotation = Quaternion.Euler(0, 0, angle + offset);
 
         // SHOOTING
         if (Input.GetMouseButtonDown(0)) // left click
@@ -60,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        // MELEE
+        // MELEE IMPLEMENTED BUT NO ANIM
         if (Input.GetMouseButtonDown(1)) // right click
         {
             // looks for all things with enemy layer inside circle

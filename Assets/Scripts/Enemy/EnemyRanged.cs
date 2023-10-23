@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class EnemyRanged : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] private float speed; // speed of the enemy
     [SerializeField] private float damage; // damage of the enemy
-    Transform player; // reference of player for the enemy to move towards player
+    [SerializeField] private float atkCD; // cd for attack
+    private float atkCDTimer; // to count the time that has passed
+    private Transform player; // reference of player for the enemy to move towards player
 
+    [Header("Gun")]
     [SerializeField] private Transform firePoint; // where the projectile would spawn
     [SerializeField] private GameObject bullet; // actual bullet to spawn/shoot
-
-    [SerializeField] private float atkCD; // cd for attack
-    float atkCDTimer; // to count the time that has passed
 
     // Start is called before the first frame update
     void Start()

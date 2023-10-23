@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMelee : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] private float speed; // speed of the enemy
     [SerializeField] private float damage; // damage of the enemy
-    Transform player; // reference of player for the enemy to move towards player
+    private Transform player; // reference of player for the enemy to move towards player
 
     // Start is called before the first frame update
     void Start()

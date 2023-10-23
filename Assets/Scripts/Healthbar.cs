@@ -10,7 +10,6 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image totalHealthbar;
     [SerializeField] private Image currentHealthbar;
 
-    // Start is called before the first frame update
     void Start()
     {
         // set total health to current health
@@ -18,7 +17,6 @@ public class Healthbar : MonoBehaviour
         totalHealthbar.fillAmount = playerHealth.currentHealth / 10;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // refreshing current health every frame

@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class farmDamage : MonoBehaviour
+public class FarmDamage : MonoBehaviour
 {
-
-    [SerializeField] Sprite[] damageSprites;
-    Health health;
+    [SerializeField] private Sprite[] damageSprites; // holds all the variations of the sprites
     SpriteRenderer sprite;
+    Health health;
 
-    // Start is called before the first frame update
     void Start()
     {
         health = GetComponent<Health>();
@@ -20,14 +18,10 @@ public class farmDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if health <= 4 change sprite, if health <= 2 change sprite
         if(health.currentHealth <= 4)
-        {
             sprite.sprite = damageSprites[1];
-        }
-
-        if(health.currentHealth <= 2)
-        {
+        else if(health.currentHealth <= 2)
             sprite.sprite = damageSprites[2];
-        }
     }
 }

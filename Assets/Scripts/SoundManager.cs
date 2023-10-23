@@ -9,11 +9,11 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance { get; private set; }
     private AudioSource soundSource; // access audiosource component
 
-    // assigning variables referenced above
     private void Awake()
     {
-        instance = this;
+        // assigning variables referenced above
         soundSource = GetComponent<AudioSource>();
+        instance = this;
     }
 
     // plays given sound once

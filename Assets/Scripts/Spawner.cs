@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private float spawnCD;
+    [SerializeField] private Transform[] spawnPoints; // where it randomly checks to spawn the enemy
+    [SerializeField] private GameObject enemy; // the enemy that it spawns
+    [SerializeField] private float spawnCD; // how fast the enemy spawns
     private float spawnCDTimer;
-
-    [SerializeField] private GameObject enemy;
-    [SerializeField] private Transform[] spawnPoints;
 
     // Update is called once per frame
     void Update()

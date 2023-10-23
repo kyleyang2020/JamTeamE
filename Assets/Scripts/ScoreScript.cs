@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    public TextMeshProUGUI score;
-    public static int scoreCount;
+    [SerializeField] private TextMeshProUGUI score; // score text component
+    public static int scoreCount; // int counter that turns to string to put into score text
 
     // Update is called once per frame
     void Update()
     {
-        score.text = scoreCount.ToString();
+        score.text = scoreCount.ToString(); // puts to string the score on screen
     }
 }
