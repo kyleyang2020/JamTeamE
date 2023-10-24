@@ -28,7 +28,10 @@ public class EnemyMelee : MonoBehaviour
     {
         // if the enemy touches a player, player take damage
         if (collision.tag == "Player")
+        {
             collision.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
         if (collision.tag == "Base")
         {
             // do damage to base and explode
